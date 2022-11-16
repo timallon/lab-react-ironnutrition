@@ -4,12 +4,20 @@
 // Remember to import Ant Design components before using them.
 import { Card, Col, Button } from 'antd';
 import React from 'react';
+import { useState } from "react";
+
 
 
 
 // Iteration 2
 function FoodBox({ food }) {
-  console.log(food)
+  const [food2, setFood2] = useState(food);
+
+  const addNewFood = (newFood) => {
+    const updatedFood = [...food2, newFood];
+    setFood2(updatedFood);
+  };
+
   return (
     <Col>
       <Card
