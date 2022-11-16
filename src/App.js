@@ -17,8 +17,24 @@ function App() {
       {/* Display Search component here */}
 
       <Divider>Food List</Divider>
+      { food.map ((food) => {
+        return (
 
-      <Row style={{ width: '100%', justifyContent: 'center' }}>
+          <FoodBox 
+      food={ {
+        name: food.name,
+        calories: food.calories,
+        image: food.image,
+        servings: food.servings
+      }}
+      />
+
+        )
+      }
+
+      ) }
+
+      {/*<Row style={{ width: '100%', justifyContent: 'center' }}>
         {food.map((food) => {
           return (
             <div>
@@ -29,15 +45,8 @@ function App() {
             
           )
         })}
-      </Row>
-      <FoodBox 
-      food={ {
-        name: "Orange",
-        calories: 85,
-        image: "https://i.imgur.com/abKGOcv.jpg",
-        servings: 1
-      }}
-      />
+      </Row>*/}
+      
 
       
     </div>
